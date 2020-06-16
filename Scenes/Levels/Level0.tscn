@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Tilesets/Prototype9patch.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Tilesets/Spikes.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/Sprites/background.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Objects/Flag.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Levels.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/LevelUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Camera.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Levels/Level1.tscn" type="PackedScene" id=9]
+
+[node name="Level0" type="Node2D"]
+script = ExtResource( 5 )
+nextScene = ExtResource( 9 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 320.0
+margin_bottom = 192.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Solid" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 8
+cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -1, 0, 8, -65536, 0, 10, -65535, 0, 10, -65534, 0, 10, -65533, 0, 10, -65532, 0, 10, -65531, 0, 10, -65530, 0, 10, -65529, 0, 10, -65528, 0, 10, -65527, 0, 10, -65526, 0, 10, -65525, 0, 10, -65524, 0, 10, -65523, 0, 10, -65522, 0, 10, -65521, 0, 10, -65520, 0, 10, -65519, 0, 10, -65518, 0, 10, -65517, 0, 10, -65516, 0, 11, 65535, 0, 65544, 0, 0, 131082, 1, 0, 131082, 2, 0, 131082, 3, 0, 131082, 4, 0, 131078, 5, 0, 196617, 6, 0, 196617, 7, 0, 196617, 8, 0, 196617, 9, 0, 196617, 10, 0, 196617, 11, 0, 196617, 12, 0, 196617, 13, 0, 196617, 14, 0, 196617, 15, 0, 131077, 16, 0, 131082, 17, 0, 131082, 18, 0, 131082, 19, 0, 131082, 20, 0, 131083, 131071, 0, 65544, 65536, 0, 131082, 65537, 0, 131082, 65538, 0, 131082, 65539, 0, 131078, 65540, 0, 196619, 65551, 0, 196616, 65552, 0, 131077, 65553, 0, 131082, 65554, 0, 131082, 65555, 0, 131082, 65556, 0, 131083, 196607, 0, 65544, 131072, 0, 131082, 131073, 0, 131082, 131074, 0, 131078, 131075, 0, 196619, 131088, 0, 196616, 131089, 0, 131077, 131090, 0, 131082, 131091, 0, 131082, 131092, 0, 131083, 262143, 0, 65544, 196608, 0, 131082, 196609, 0, 131078, 196610, 0, 196619, 196625, 0, 196616, 196626, 0, 131077, 196627, 0, 131082, 196628, 0, 131083, 327679, 0, 65544, 262144, 0, 131078, 262145, 0, 196619, 262162, 0, 196616, 262163, 0, 131077, 262164, 0, 131083, 393215, 0, 65544, 327680, 0, 131083, 327699, 0, 65544, 327700, 0, 131083, 458751, 0, 65544, 393216, 0, 131083, 393235, 0, 65544, 393236, 0, 131083, 524287, 0, 65544, 458752, 0, 131083, 458771, 0, 65544, 458772, 0, 131083, 589823, 0, 65544, 524288, 0, 131083, 524307, 0, 65544, 524308, 0, 131083, 655359, 0, 65544, 589824, 0, 131083, 589843, 0, 65544, 589844, 0, 131083, 720895, 0, 65544, 655360, 0, 131083, 655368, 1, 196608, 655371, 1, 196608, 655379, 0, 65544, 655380, 0, 131083, 786431, 0, 65544, 720896, 0, 131083, 720897, 1, 196609, 720898, 1, 196610, 720899, 1, 196610, 720900, 1, 196610, 720901, 1, 196610, 720902, 1, 196610, 720903, 1, 196611, 720904, 0, 8, 720905, 0, 10, 720906, 0, 10, 720907, 0, 11, 720908, 1, 196609, 720909, 1, 196610, 720910, 1, 196610, 720911, 1, 196610, 720912, 1, 196610, 720913, 1, 196610, 720914, 1, 196611, 720915, 0, 65544, 720916, 0, 131083, 851967, 0, 196616, 786432, 0, 196614, 786433, 0, 196610, 786434, 0, 196610, 786435, 0, 196610, 786436, 0, 196610, 786437, 0, 196610, 786438, 0, 196610, 786439, 0, 196610, 786440, 0, 196613, 786441, 0, 196617, 786442, 0, 196617, 786443, 0, 196614, 786444, 0, 196610, 786445, 0, 196610, 786446, 0, 196610, 786447, 0, 196610, 786448, 0, 196610, 786449, 0, 196610, 786450, 0, 196610, 786451, 0, 196613, 786452, 0, 196619 )
+
+[node name="HazardMap" type="TileMap" parent="." groups=[
+"hazards",
+]]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 655369, 0, 0, 655370, 0, 0 )
+
+[node name="Flag" parent="." groups=[
+"flag",
+] instance=ExtResource( 4 )]
+position = Vector2( 264, 168 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="LevelUI" parent="." instance=ExtResource( 6 )]
+
+[node name="Ball" parent="." instance=ExtResource( 8 )]
+position = Vector2( 56, 168 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 160, 96 )
+current = true
+script = ExtResource( 7 )

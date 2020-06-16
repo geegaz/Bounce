@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Jump 2.wav-acc9ff2ca6a033d101019e9e89fd508a.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/David Stearns - Platformer SFX/Jump 2.wav"
+dest_files=[ "res://.import/Jump 2.wav-acc9ff2ca6a033d101019e9e89fd508a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Coin Count Loop.wav-07585bee63232e29f701c28bec3fb772.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/David Stearns - Platformer SFX/Coin Count Loop.wav"
+dest_files=[ "res://.import/Coin Count Loop.wav-07585bee63232e29f701c28bec3fb772.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

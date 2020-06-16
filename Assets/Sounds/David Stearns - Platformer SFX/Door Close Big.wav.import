@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Door Close Big.wav-0d0e15ebf5d98149cdf35d011a441f1d.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/David Stearns - Platformer SFX/Door Close Big.wav"
+dest_files=[ "res://.import/Door Close Big.wav-0d0e15ebf5d98149cdf35d011a441f1d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
