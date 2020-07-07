@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro Ring 01.wav-9bdf1c80cb3606bf9e21bc888e7236a1.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Kronbits - FreeSFX/GameSFX/Alarms Blip Beeps/Retro Ring 01.wav"
+dest_files=[ "res://.import/Retro Ring 01.wav-9bdf1c80cb3606bf9e21bc888e7236a1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

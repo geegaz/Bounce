@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Global.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Shaders/Transition.shader" type="Shader" id=3]
+[ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "next_level_hide"
+tracks/0/type = "value"
+tracks/0/path = NodePath("TransitionColor:material:shader_param/transition_state")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TransitionText:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 320, 0 ), Vector2( 320, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "next_level_reveal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("TransitionColor:material:shader_param/transition_state")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TransitionText:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -320, 0 ), Vector2( -320, 0 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 3 )
+shader_param/base_color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+shader_param/transition_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+shader_param/transition_state = 1.0
+shader_param/transition_multiplier = 1.6
+
+[node name="Global" type="Node2D"]
+script = ExtResource( 1 )
+Levels = [ "res://Scenes/Levels/Level0.tscn", "res://Scenes/Levels/Level1.tscn", "res://Scenes/Levels/Level2.tscn", "res://Scenes/Levels/Level3.tscn", "res://Scenes/Levels/Level4.tscn", "res://Scenes/Levels/Level5.tscn" ]
+max_unlocked_level = 5
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+bus = "Music"
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
+anims/next_level_hide = SubResource( 1 )
+anims/next_level_reveal = SubResource( 2 )
+
+[node name="TransitionColor" type="ColorRect" parent="UI"]
+material = SubResource( 3 )
+margin_right = 320.0
+margin_bottom = 184.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TransitionText" type="Node2D" parent="UI"]
+position = Vector2( 320, 0 )
+
+[node name="Label" type="Label" parent="UI/TransitionText"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 256.0
+margin_bottom = 90.0
+theme = ExtResource( 7 )
+text = "Level"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource( 2 )

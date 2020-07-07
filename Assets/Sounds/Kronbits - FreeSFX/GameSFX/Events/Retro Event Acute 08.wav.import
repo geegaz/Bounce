@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro Event Acute 08.wav-cf3e53a4f3978bd960e8a68da994acf7.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Kronbits - FreeSFX/GameSFX/Events/Retro Event Acute 08.wav"
+dest_files=[ "res://.import/Retro Event Acute 08.wav-cf3e53a4f3978bd960e8a68da994acf7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

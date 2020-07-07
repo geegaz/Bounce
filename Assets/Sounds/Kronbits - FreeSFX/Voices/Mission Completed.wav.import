@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Mission Completed.wav-1d8c2b6fd4ca2e4b682e64b9c7621835.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Kronbits - FreeSFX/Voices/Mission Completed.wav"
+dest_files=[ "res://.import/Mission Completed.wav-1d8c2b6fd4ca2e4b682e64b9c7621835.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

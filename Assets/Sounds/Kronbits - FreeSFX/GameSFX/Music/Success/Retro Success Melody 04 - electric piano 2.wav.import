@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro Success Melody 04 - electric piano 2.wav-56c7b3b409eb19f2b0a1f3406a461e25.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Kronbits - FreeSFX/GameSFX/Music/Success/Retro Success Melody 04 - electric piano 2.wav"
+dest_files=[ "res://.import/Retro Success Melody 04 - electric piano 2.wav-56c7b3b409eb19f2b0a1f3406a461e25.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

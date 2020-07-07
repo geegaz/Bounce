@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro Magic Protection 25.wav-02733ea3bf2ff1ecbb04f084041ef01f.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Kronbits - FreeSFX/GameSFX/Magic/Retro Magic Protection 25.wav"
+dest_files=[ "res://.import/Retro Magic Protection 25.wav-02733ea3bf2ff1ecbb04f084041ef01f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

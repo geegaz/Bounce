@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro Alarmed 10.wav-2a453de05395927343040e821fee14b9.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Kronbits - FreeSFX/GameSFX/Alarms Blip Beeps/Retro Alarmed 10.wav"
+dest_files=[ "res://.import/Retro Alarmed 10.wav-2a453de05395927343040e821fee14b9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

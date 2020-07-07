@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro Weird Psych 05.wav-d359ce38082b64018229d1d968c0b9b1.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Kronbits - FreeSFX/GameSFX/z_Various/Retro Weird Psych 05.wav"
+dest_files=[ "res://.import/Retro Weird Psych 05.wav-d359ce38082b64018229d1d968c0b9b1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,94 +1,95 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/Levels/Level1.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Levels/Level2.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Levels/Level0.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Levels/Level3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sprites/background.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=9]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 5 )
-Levels = [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ) ]
 
-[node name="Menu" type="CanvasLayer" parent="."]
-
-[node name="LevelsSelection" type="VBoxContainer" parent="Menu"]
+[node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 320.0
 margin_bottom = 184.0
-custom_constants/separation = 12
+texture = ExtResource( 7 )
+stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Menu/LevelsSelection"]
-margin_right = 320.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 0, 20 )
-text = "Levels"
-align = 1
-valign = 1
+[node name="MainUI" type="CanvasLayer" parent="."]
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Menu/LevelsSelection"]
-margin_top = 32.0
+[node name="Menu" type="Control" parent="MainUI"]
 margin_right = 320.0
 margin_bottom = 184.0
+theme = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelsSelection" type="VBoxContainer" parent="MainUI/Menu"]
+margin_right = 320.0
+margin_bottom = 176.0
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="MainUI/Menu/LevelsSelection"]
+margin_right = 320.0
+margin_bottom = 26.0
+
+[node name="Title" type="Label" parent="MainUI/Menu/LevelsSelection/CenterContainer"]
+margin_left = 112.0
+margin_right = 208.0
+margin_bottom = 26.0
+text = "Bounce !"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainUI/Menu/LevelsSelection"]
+margin_top = 34.0
+margin_right = 320.0
+margin_bottom = 146.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_vertical = 3
 follow_focus = true
 scroll_horizontal_enabled = false
 
-[node name="CenterContainer" type="CenterContainer" parent="Menu/LevelsSelection/ScrollContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="MainUI/Menu/LevelsSelection/ScrollContainer"]
 margin_right = 320.0
-margin_bottom = 144.0
 size_flags_horizontal = 3
 
-[node name="GridContainer" type="GridContainer" parent="Menu/LevelsSelection/ScrollContainer/CenterContainer"]
-margin_left = 74.0
-margin_right = 246.0
-margin_bottom = 144.0
-custom_constants/vseparation = 12
-custom_constants/hseparation = 12
-columns = 2
+[node name="GridContainer" type="GridContainer" parent="MainUI/Menu/LevelsSelection/ScrollContainer/CenterContainer"]
+margin_left = 160.0
+margin_right = 160.0
+custom_constants/vseparation = 8
+custom_constants/hseparation = 8
+columns = 3
 
-[node name="Level0" type="Button" parent="Menu/LevelsSelection/ScrollContainer/CenterContainer/GridContainer"]
-margin_right = 80.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 80, 40 )
-text = "Level 0"
+[node name="CenterContainer2" type="CenterContainer" parent="MainUI/Menu/LevelsSelection"]
+margin_top = 154.0
+margin_right = 320.0
+margin_bottom = 176.176
 
-[node name="Level1" type="Button" parent="Menu/LevelsSelection/ScrollContainer/CenterContainer/GridContainer"]
-margin_left = 92.0
-margin_right = 172.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 80, 40 )
-text = "Level 1"
+[node name="QuitButton" type="Button" parent="MainUI/Menu/LevelsSelection/CenterContainer2"]
+margin_left = 140.0
+margin_right = 180.0
+margin_bottom = 22.1758
+rect_min_size = Vector2( 40, 22 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Level2" type="Button" parent="Menu/LevelsSelection/ScrollContainer/CenterContainer/GridContainer"]
-margin_top = 52.0
-margin_right = 80.0
-margin_bottom = 92.0
-rect_min_size = Vector2( 80, 40 )
-text = "Level 2"
-
-[node name="Level3" type="Button" parent="Menu/LevelsSelection/ScrollContainer/CenterContainer/GridContainer"]
-margin_left = 92.0
-margin_top = 52.0
-margin_right = 172.0
-margin_bottom = 92.0
-rect_min_size = Vector2( 80, 40 )
-text = "Level 3"
-
-[node name="Level4" type="Button" parent="Menu/LevelsSelection/ScrollContainer/CenterContainer/GridContainer"]
-margin_top = 104.0
-margin_right = 80.0
-margin_bottom = 144.0
-rect_min_size = Vector2( 80, 40 )
-text = "Level 4"
-
-[node name="Level5" type="Button" parent="Menu/LevelsSelection/ScrollContainer/CenterContainer/GridContainer"]
-margin_left = 92.0
-margin_top = 104.0
-margin_right = 172.0
-margin_bottom = 144.0
-rect_min_size = Vector2( 80, 40 )
-text = "Level 5"
+[node name="QuitPopup" type="AcceptDialog" parent="MainUI"]
+visible = true
+margin_left = 80.0
+margin_top = 48.0
+margin_right = 240.0
+margin_bottom = 120.0
+theme = ExtResource( 9 )
+window_title = ""
+dialog_text = "Quit game ?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MainUI/Menu/LevelsSelection/CenterContainer2/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="confirmed" from="MainUI/QuitPopup" to="." method="_on_QuitPopup_confirmed"]

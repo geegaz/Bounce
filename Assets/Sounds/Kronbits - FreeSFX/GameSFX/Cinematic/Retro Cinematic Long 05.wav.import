@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro Cinematic Long 05.wav-74534dd4f92eacdb6e52189be98ba884.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Kronbits - FreeSFX/GameSFX/Cinematic/Retro Cinematic Long 05.wav"
+dest_files=[ "res://.import/Retro Cinematic Long 05.wav-74534dd4f92eacdb6e52189be98ba884.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

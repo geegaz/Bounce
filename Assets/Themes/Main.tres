@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Fonts/text.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Themes/ButtonStyles/focused.tres" type="StyleBox" id=2]
+[ext_resource path="res://Assets/Themes/ButtonStyles/disabled.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/Themes/ButtonStyles/pressed.tres" type="StyleBox" id=4]
+[ext_resource path="res://Assets/Themes/ButtonStyles/normal.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/Themes/ButtonStyles/hovered.tres" type="StyleBox" id=6]
+[ext_resource path="res://Assets/Fonts/text_big.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Assets/Sprites/UI/close.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/UI/close_highlight.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/UI/panel.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 3.0
+margin_right = 3.11135
+margin_top = 2.97498
+margin_bottom = 3.11811
+
+[resource]
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.517647, 0.494118, 0.529412, 1 )
+Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
+Button/colors/font_color_pressed = Color( 0.796078, 0.858824, 0.988235, 1 )
+Button/constants/hseparation = 6
+Button/fonts/font = ExtResource( 1 )
+Button/styles/disabled = ExtResource( 3 )
+Button/styles/focus = ExtResource( 2 )
+Button/styles/hover = ExtResource( 6 )
+Button/styles/normal = ExtResource( 5 )
+Button/styles/pressed = ExtResource( 4 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = ExtResource( 7 )
+Label/styles/normal = null
+Panel/styles/panel = SubResource( 1 )
+PanelContainer/styles/panel = SubResource( 1 )
+WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
+WindowDialog/constants/close_h_ofs = 18
+WindowDialog/constants/close_v_ofs = 8
+WindowDialog/constants/scaleborder_size = 0
+WindowDialog/constants/title_height = 0
+WindowDialog/fonts/title_font = ExtResource( 1 )
+WindowDialog/icons/close = ExtResource( 8 )
+WindowDialog/icons/close_highlight = ExtResource( 9 )
+WindowDialog/styles/panel = SubResource( 1 )
