@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Collect 1.wav-77dd9bb5cdb9c350fff7d4c73312141a.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Collect 1.wav"
+dest_files=[ "res://.import/Collect 1.wav-77dd9bb5cdb9c350fff7d4c73312141a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

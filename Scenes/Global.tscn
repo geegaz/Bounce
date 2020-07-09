@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Global.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Shaders/Transition.shader" type="Shader" id=3]
+[ext_resource path="res://Assets/Sounds/Music/Metre_-_10_-_Bunker.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=7]
 
 [sub_resource type="Animation" id=1]
@@ -69,10 +70,10 @@ shader_param/transition_multiplier = 1.6
 
 [node name="Global" type="Node2D"]
 script = ExtResource( 1 )
-Levels = [ "res://Scenes/Levels/Level0.tscn", "res://Scenes/Levels/Level1.tscn", "res://Scenes/Levels/Level2.tscn", "res://Scenes/Levels/Level3.tscn", "res://Scenes/Levels/Level4.tscn", "res://Scenes/Levels/Level5.tscn" ]
-max_unlocked_level = 5
+Levels = [ "res://Scenes/Levels/Level0.tscn", "res://Scenes/Levels/Level1.tscn", "res://Scenes/Levels/Level2.tscn", "res://Scenes/Levels/Level3.tscn", "res://Scenes/Levels/Level4.tscn", "res://Scenes/Levels/Level5.tscn", "res://Scenes/Levels/Level6.tscn", "res://Scenes/Levels/Level7.tscn", "res://Scenes/Levels/Level8.tscn", "res://Scenes/Levels/Level9.tscn" ]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 bus = "Music"
 
 [node name="UI" type="CanvasLayer" parent="."]

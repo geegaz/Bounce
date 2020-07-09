@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Metre_-_01_-_Scuba.ogg-6b22fb8a0a243f966da72dbfbc97c5be.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Metre_-_01_-_Scuba.ogg"
+dest_files=[ "res://.import/Metre_-_01_-_Scuba.ogg-6b22fb8a0a243f966da72dbfbc97c5be.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -7,9 +7,9 @@
 [ext_resource path="res://Assets/Themes/ButtonStyles/normal.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/Themes/ButtonStyles/hovered.tres" type="StyleBox" id=6]
 [ext_resource path="res://Assets/Fonts/text_big.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Assets/Sprites/UI/close.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/UI/close_highlight.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/UI/panel.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/ui/close.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/ui/close_highlight.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/ui/panel.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 10 )

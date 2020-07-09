@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Metre_-_10_-_Bunker.ogg-e1833ceac05ffc126a8b5947c00a37d0.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Metre_-_10_-_Bunker.ogg"
+dest_files=[ "res://.import/Metre_-_10_-_Bunker.ogg-e1833ceac05ffc126a8b5947c00a37d0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

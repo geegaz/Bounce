@@ -1,14 +1,16 @@
 extends CPUParticles2D
 
-var life
-# Called when the node enters the scene tree for the first time.
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 func _ready():
 	emitting = true
-
+	
 func _process(delta):
-	if not emitting:
+	if !emitting:
 		queue_free()
 
-func init(start_angle, start_dir):
-	self.angle = start_angle
-	self.direction = start_dir
+func init(angle, direction):
+	self.angle = angle
+	self.direction = direction

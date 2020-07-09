@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Stomp High.wav-83776d973bb57ccdc64a9d747e38dfe9.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Stomp High.wav"
+dest_files=[ "res://.import/Stomp High.wav-83776d973bb57ccdc64a9d747e38dfe9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

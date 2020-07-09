@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Action Misc 12.wav-280565f83b3c93622efdf083a299ea1c.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Action Misc 12.wav"
+dest_files=[ "res://.import/Action Misc 12.wav-280565f83b3c93622efdf083a299ea1c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -6,4 +6,6 @@
 
 ## [Eeve Somepx](https://somepx.itch.io/)
 - [Humble fonts gold](https://somepx.itch.io/humble-fonts-gold)
-- [Humble fonts free](https://somepx.itch.io/humble-fonts-free)
+
+## [Metre](https://freemusicarchive.org/music/Metre)
+- ["Circuit" Album](https://freemusicarchive.org/music/Metre/Circuit_1731)

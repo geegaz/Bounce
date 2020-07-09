@@ -1,24 +1,38 @@
 extends Node2D
 
+const SAVE_FILE = "user://bounce-save.json"
+# Data to save:
+# - max_unlocked_level
+# - sfx_volume
+# - music_volume
+# - use_controller_rumble
+
 export(Array, String, FILE) var Levels
-export(int, 0, 20) var max_unlocked_level: int = 0
+export(int, 0, 20) var max_unlocked_level = 0
+export(float, -80.0, 6.0) var sfx_volume = 0.0
+export(float, -80.0, 6.0) var music_volume = 0.0
+export(bool) var use_controller_rumble = true
 
 var current_scene = null
-var play_time: float
 var level: int
 
 var Animator: AnimationPlayer
 var LevelLabel: Label
 var CameramanBilly: Camera2D
+var Music: AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	play_time = 0.0
-	level = 0
+	load_game()
+	level = -1
+	
+	AudioServer.set_bus_volume_db(1, sfx_volume)
+	AudioServer.set_bus_volume_db(2, music_volume)
 	
 	Animator = $UI/AnimationPlayer
 	LevelLabel = $UI/TransitionText/Label
 	CameramanBilly = $Camera
+	Music = $Music
 	
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
@@ -42,6 +56,9 @@ func next_scene(level_num: int):
 		Animator.connect("animation_finished", self, "_finish_next_scene", [level_num])
 		LevelLabel.text = ("Level "+str(level_num))
 		Animator.play("next_level_hide")
+		
+		if !Music.playing:
+			Music.play()
 	else:
 		goto_menu()
 
@@ -53,13 +70,48 @@ func _finish_next_scene(anim_name, level_num: int):
 	Animator.play("next_level_reveal")
 	Animator.disconnect("animation_finished", self, "_finish_next_scene")
 	
+	save_game()
+	
 func goto_menu():
 	Animator.connect("animation_finished", self, "_finish_goto_menu")
 	LevelLabel.text = "Bounce!"
 	Animator.play("next_level_hide")
 
 func _finish_goto_menu(anim_name):
+	level = -1
 	change_scene("res://Scenes/Main.tscn")
 	Animator.play("next_level_reveal")
 	Animator.disconnect("animation_finished", self, "_finish_goto_menu")
+	
+	if Music.playing:
+		Music.stop()
+
+func save_game():
+	var data = {
+		"max_unlocked_level": max_unlocked_level,
+		"sfx_volume": sfx_volume,
+		"music_volume": music_volume,
+		"use_controller_rumble": use_controller_rumble
+	}
+	var f = File.new()
+	f.open(SAVE_FILE, File.WRITE)
+	f.store_line(to_json(data))
+	f.close()
+
+func load_game():
+	var f = File.new()
+	if f.file_exists(SAVE_FILE):
+		f.open(SAVE_FILE, File.READ)
+		var data = parse_json(f.get_as_text())
+		f.close()
+		if typeof(data) == TYPE_DICTIONARY:
+			if data["max_unlocked_level"] > max_unlocked_level:
+				max_unlocked_level = data["max_unlocked_level"]
+			sfx_volume = data["sfx_volume"]
+			music_volume = data["music_volume"] 
+			use_controller_rumble = data["use_controller_rumble"]
+		else:
+			printerr("Corrupted data!")
+	else:
+		printerr("No saved data!")
 

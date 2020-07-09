@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Explosion.wav-23a70bafa96fb2ee8d9d16e54963cd76.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Explosion.wav"
+dest_files=[ "res://.import/Explosion.wav-23a70bafa96fb2ee8d9d16e54963cd76.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

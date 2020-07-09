@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Long Slide Up.wav-1d4974aa1a58d1b0492052e9e583bcce.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Long Slide Up.wav"
+dest_files=[ "res://.import/Long Slide Up.wav-1d4974aa1a58d1b0492052e9e583bcce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

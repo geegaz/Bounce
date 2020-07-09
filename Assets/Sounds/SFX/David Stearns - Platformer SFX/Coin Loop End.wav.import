@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Coin Loop End.wav-7cb9132c1ec9a3081dccc6432f39568b.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Coin Loop End.wav"
+dest_files=[ "res://.import/Coin Loop End.wav-7cb9132c1ec9a3081dccc6432f39568b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -4,10 +4,10 @@
 [ext_resource path="res://Scripts/Ball.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Shaders/Ball.shader" type="Shader" id=3]
 [ext_resource path="res://Assets/Sprites/ball_highlight.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sounds/David Stearns - Platformer SFX/Hit 2.wav" type="AudioStream" id=5]
-[ext_resource path="res://Assets/Sounds/David Stearns - Platformer SFX/Explosion with Ricochet.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Sounds/David Stearns - Platformer SFX/Coin Total Win 2.wav" type="AudioStream" id=7]
-[ext_resource path="res://Assets/Sounds/David Stearns - Platformer SFX/Jump 4.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Hit 2.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Explosion with Ricochet.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Coin Total Win 2.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Jump 4.wav" type="AudioStream" id=8]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )

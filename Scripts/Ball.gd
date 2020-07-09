@@ -26,7 +26,7 @@ var BallImage: Sprite
 var BallHighlight: Sprite
 var Collider: CollisionShape2D
 
-var Particle = preload("res://Scenes/Objects/Emitter.tscn")
+var Particle = preload("res://Scenes/Objects/Dash.tscn")
 
 signal entered_hazard
 signal touched_flag
@@ -75,7 +75,7 @@ func _physics_process(delta):
 			velocity = velocity.bounce(collision.normal)*Vector2(0.8,1.0)
 			velocity.y -= BOUNCE_STRENGTH
 			
-			Input.start_joy_vibration(0, 0.6, 0.6, 0.05)
+			rumble(0.6, 0.05)
 			play_sound(BUMP, -4.0, 1.0)
 			
 		else:
@@ -89,7 +89,7 @@ func _physics_process(delta):
 		air_time += delta
 	
 	if on_ground and not prev_on_ground:
-		Input.start_joy_vibration(0, 1.0, 1.0, 0.05)
+		rumble(1.0, 0.05)
 	
 	distort(BallImage, velocity*delta, Vector2(-0.005,0.015), 0.047)
 	distort(BallHighlight, velocity*delta, Vector2(-0.005,0.005), 0.023)
@@ -130,6 +130,10 @@ func play_sound(sound_id: int, volume: float, pitch: float):
 		Sounds[sound_id].volume_db = volume
 		Sounds[sound_id].pitch_scale = pitch
 		Sounds[sound_id].play()
+
+func rumble(strength: float, duration: float):
+	if Global.use_controller_rumble:
+		Input.start_joy_vibration(0, strength, strength, duration)
 	
 func _on_Effector_body_entered(body):
 	if body.is_in_group("flag") :
@@ -146,18 +150,18 @@ func _on_Effector_body_entered(body):
 		$DeathParticle.emitting = true
 		$Collider.disabled = true
 		
-		Input.start_joy_vibration(0, 1.0, 1.0, 0.2)
+		rumble(1.0, 0.2)
 		play_sound(DIE, 0.0, 1.0)
 		
 		get_tree().call_group("player_sprite", "hide")
 		emit_signal("entered_hazard")
 	
 	elif body.is_in_group("water"):
-		gravity_factor = -1.4
+		gravity_factor = -1.5
 		
 		play_sound(ENTER_WATER, -2.0, 1.0)
 		AudioServer.set_bus_effect_enabled(0, 0, true)
-		Input.start_joy_vibration(0, 0.5, 0.2, 0.1)
+		rumble(0.4, 0.1)
 
 func _on_Effector_body_exited(body):
 	if body.is_in_group("water"):
@@ -165,4 +169,4 @@ func _on_Effector_body_exited(body):
 		
 		play_sound(EXIT_WATER, -2.0, 1.0)
 		AudioServer.set_bus_effect_enabled(0, 0, false)
-		Input.start_joy_vibration(0, 0.5, 0.2, 0.1)
+		rumble(0.4, 0.1)

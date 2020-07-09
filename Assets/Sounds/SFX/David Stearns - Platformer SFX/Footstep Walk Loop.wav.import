@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Footstep Walk Loop.wav-9db5b70f51c5720586b6723e62036a76.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Footstep Walk Loop.wav"
+dest_files=[ "res://.import/Footstep Walk Loop.wav-9db5b70f51c5720586b6723e62036a76.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
