@@ -65,3 +65,7 @@ func _on_QuitButton_pressed():
 
 func _on_QuitPopup_confirmed():
 	get_tree().quit()
+
+
+func _on_Reset_pressed():
+	Global.reset()

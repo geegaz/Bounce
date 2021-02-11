@@ -115,3 +115,12 @@ func load_game():
 	else:
 		printerr("No saved data!")
 
+func reset():
+	max_unlocked_level = 0
+	sfx_volume = 0.0
+	music_volume = 0.0
+	use_controller_rumble = true
+	
+	save_game()
+	goto_menu()
+

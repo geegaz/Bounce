@@ -79,8 +79,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Reset" type="Button" parent="MainUI/Menu"]
+margin_left = 280.0
+margin_right = 320.0
+margin_bottom = 22.1758
+text = "reset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="QuitPopup" type="AcceptDialog" parent="MainUI"]
-visible = true
 margin_left = 80.0
 margin_top = 48.0
 margin_right = 240.0
@@ -92,4 +100,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="MainUI/Menu/LevelsSelection/CenterContainer2/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="MainUI/Menu/Reset" to="." method="_on_Reset_pressed"]
 [connection signal="confirmed" from="MainUI/QuitPopup" to="." method="_on_QuitPopup_confirmed"]
