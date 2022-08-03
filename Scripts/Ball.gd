@@ -148,7 +148,7 @@ func _on_Effector_body_entered(body):
 		alive = false
 		local_time_scale = 0.0
 		$DeathParticle.emitting = true
-		$Collider.disabled = true
+		$Collider.set_deferred("disabled", true)
 		
 		rumble(1.0, 0.2)
 		play_sound(DIE, 0.0, 1.0)

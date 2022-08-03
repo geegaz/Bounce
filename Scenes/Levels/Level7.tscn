@@ -4,9 +4,10 @@
 [ext_resource path="res://Assets/Tilesets/spikes.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Sprites/background.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Objects/Flag.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/Levels.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Tilesets/prototype_zones.tres" type="TileSet" id=6]
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=8]
+
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 5 )

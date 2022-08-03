@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/LevelData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+level_name = "Platforms"
+level_scene = "res://Scenes/Levels/Level2.tscn"
+level_last_time = 0.0
+level_best_time = 0.0

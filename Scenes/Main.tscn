@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Scenes/UI/LevelList.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Sprites/background.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=9]
@@ -19,60 +20,30 @@ __meta__ = {
 [node name="MainUI" type="CanvasLayer" parent="."]
 
 [node name="Menu" type="Control" parent="MainUI"]
-margin_right = 320.0
-margin_bottom = 184.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 9 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="LevelsSelection" type="VBoxContainer" parent="MainUI/Menu"]
-margin_right = 320.0
-margin_bottom = 176.0
-custom_constants/separation = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CenterContainer" type="CenterContainer" parent="MainUI/Menu/LevelsSelection"]
-margin_right = 320.0
-margin_bottom = 26.0
-
-[node name="Title" type="Label" parent="MainUI/Menu/LevelsSelection/CenterContainer"]
-margin_left = 112.0
-margin_right = 208.0
+[node name="Title" type="Label" parent="MainUI/Menu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -48.0
+margin_right = 48.0
 margin_bottom = 26.0
 text = "Bounce !"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MainUI/Menu/LevelsSelection"]
-margin_top = 34.0
-margin_right = 320.0
-margin_bottom = 146.0
-rect_min_size = Vector2( 0, 50 )
-size_flags_vertical = 3
-follow_focus = true
-scroll_horizontal_enabled = false
-
-[node name="CenterContainer" type="CenterContainer" parent="MainUI/Menu/LevelsSelection/ScrollContainer"]
-margin_right = 320.0
-size_flags_horizontal = 3
-
-[node name="GridContainer" type="GridContainer" parent="MainUI/Menu/LevelsSelection/ScrollContainer/CenterContainer"]
-margin_left = 160.0
-margin_right = 160.0
-custom_constants/vseparation = 8
-custom_constants/hseparation = 8
-columns = 3
-
-[node name="CenterContainer2" type="CenterContainer" parent="MainUI/Menu/LevelsSelection"]
-margin_top = 154.0
-margin_right = 320.0
-margin_bottom = 176.176
-
-[node name="QuitButton" type="Button" parent="MainUI/Menu/LevelsSelection/CenterContainer2"]
-margin_left = 140.0
-margin_right = 180.0
-margin_bottom = 22.1758
+[node name="QuitButton" type="Button" parent="MainUI/Menu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = -26.0
+margin_right = 24.0
+margin_bottom = -3.82419
 rect_min_size = Vector2( 40, 22 )
 text = "Quit"
 __meta__ = {
@@ -80,25 +51,22 @@ __meta__ = {
 }
 
 [node name="Reset" type="Button" parent="MainUI/Menu"]
-margin_left = 280.0
-margin_right = 320.0
-margin_bottom = 22.1758
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -44.0
+margin_top = 4.0
+margin_right = -4.00003
+margin_bottom = 26.1758
 text = "reset"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuitPopup" type="AcceptDialog" parent="MainUI"]
-margin_left = 80.0
-margin_top = 48.0
-margin_right = 240.0
-margin_bottom = 120.0
-theme = ExtResource( 9 )
-window_title = ""
-dialog_text = "Quit game ?"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="MainUI/Menu/LevelsSelection/CenterContainer2/QuitButton" to="." method="_on_QuitButton_pressed"]
+[node name="LevelList" parent="MainUI/Menu" instance=ExtResource( 1 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -59.0
+margin_bottom = 62.0
+
+[connection signal="pressed" from="MainUI/Menu/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="MainUI/Menu/Reset" to="." method="_on_Reset_pressed"]
-[connection signal="confirmed" from="MainUI/QuitPopup" to="." method="_on_QuitPopup_confirmed"]

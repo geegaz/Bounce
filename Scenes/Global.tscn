@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Global.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
@@ -7,18 +7,19 @@
 [ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=7]
 
 [sub_resource type="Animation" id=1]
-resource_name = "next_level_hide"
+resource_name = "transition"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("TransitionColor:material:shader_param/transition_state")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 1.0, 0.0 ]
+"values": [ 1.0, 0.0, 0.0, -1.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("TransitionText:position")
@@ -27,38 +28,24 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.4, 0.5, 0.6, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 320, 0 ), Vector2( 320, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 320, 0 ), Vector2( 320, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( -320, 0 ), Vector2( -320, 0 ) ]
 }
-
-[sub_resource type="Animation" id=2]
-resource_name = "next_level_reveal"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("TransitionColor:material:shader_param/transition_state")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -1.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("TransitionText:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -320, 0 ), Vector2( -320, 0 ) ]
+tracks/2/type = "method"
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "load_scene" ],
+"method": "emit_signal"
+} ]
 }
 
 [sub_resource type="ShaderMaterial" id=3]
@@ -70,7 +57,7 @@ shader_param/transition_multiplier = 1.6
 
 [node name="Global" type="Node2D"]
 script = ExtResource( 1 )
-Levels = [ "res://Scenes/Levels/Level0.tscn", "res://Scenes/Levels/Level1.tscn", "res://Scenes/Levels/Level2.tscn", "res://Scenes/Levels/Level3.tscn", "res://Scenes/Levels/Level4.tscn", "res://Scenes/Levels/Level5.tscn", "res://Scenes/Levels/Level6.tscn", "res://Scenes/Levels/Level7.tscn", "res://Scenes/Levels/Level8.tscn", "res://Scenes/Levels/Level9.tscn" ]
+levels = [ "res://Scenes/Levels/Level0.tscn", "res://Scenes/Levels/Level1.tscn", "res://Scenes/Levels/Level2.tscn", "res://Scenes/Levels/Level3.tscn", "res://Scenes/Levels/Level4.tscn", "res://Scenes/Levels/Level5.tscn", "res://Scenes/Levels/Level6.tscn", "res://Scenes/Levels/Level7.tscn", "res://Scenes/Levels/Level8.tscn", "res://Scenes/Levels/Level9.tscn" ]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
@@ -80,8 +67,7 @@ bus = "Music"
 layer = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
-anims/next_level_hide = SubResource( 1 )
-anims/next_level_reveal = SubResource( 2 )
+anims/transition = SubResource( 1 )
 
 [node name="TransitionColor" type="ColorRect" parent="UI"]
 material = SubResource( 3 )
@@ -103,9 +89,17 @@ margin_bottom = 90.0
 theme = ExtResource( 7 )
 text = "Level"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="TimerLabel" type="Label" parent="UI"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -160.0
+margin_top = 8.0
+margin_right = -10.0
+margin_bottom = 22.0
+text = "{0}:{1}:{2}"
+align = 2
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0

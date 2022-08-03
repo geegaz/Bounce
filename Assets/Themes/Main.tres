@@ -1,18 +1,17 @@
-[gd_resource type="Theme" load_steps=12 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Fonts/text.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/Themes/ButtonStyles/focused.tres" type="StyleBox" id=2]
 [ext_resource path="res://Assets/Themes/ButtonStyles/disabled.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/Themes/ButtonStyles/pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/Themes/ButtonStyles/normal.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/Themes/ButtonStyles/hovered.tres" type="StyleBox" id=6]
 [ext_resource path="res://Assets/Fonts/text_big.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Assets/Sprites/ui/close.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/ui/close_highlight.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/ui/panel.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 0.498039 )
+corner_detail = 1
 
 [sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 16, 16 )
 margin_left = 3.0
 margin_right = 3.11135
@@ -27,7 +26,7 @@ Button/colors/font_color_pressed = Color( 0.796078, 0.858824, 0.988235, 1 )
 Button/constants/hseparation = 6
 Button/fonts/font = ExtResource( 1 )
 Button/styles/disabled = ExtResource( 3 )
-Button/styles/focus = ExtResource( 2 )
+Button/styles/focus = SubResource( 2 )
 Button/styles/hover = ExtResource( 6 )
 Button/styles/normal = ExtResource( 5 )
 Button/styles/pressed = ExtResource( 4 )
@@ -48,6 +47,6 @@ WindowDialog/constants/close_v_ofs = 8
 WindowDialog/constants/scaleborder_size = 0
 WindowDialog/constants/title_height = 0
 WindowDialog/fonts/title_font = ExtResource( 1 )
-WindowDialog/icons/close = ExtResource( 8 )
-WindowDialog/icons/close_highlight = ExtResource( 9 )
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
 WindowDialog/styles/panel = SubResource( 1 )
